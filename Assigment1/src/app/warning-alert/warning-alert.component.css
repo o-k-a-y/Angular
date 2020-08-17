@@ -1,5 +1,8 @@
-div {
+p {
     color: rgb(173, 50, 50);
     font-size: 4vw;
+    padding: 20px;
+    border: 1px solid red;
+    background-color: mistyrose;
     /* width: 100%; */
 }

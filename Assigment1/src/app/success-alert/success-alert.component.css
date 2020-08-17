@@ -1,6 +1,9 @@
 p {
     color: green;
     font-size: 4vw;
+    padding: 20px;
+    border: 1px solid green;
+    background-color: palegreen;
 }
 /* div {
     color: green;
