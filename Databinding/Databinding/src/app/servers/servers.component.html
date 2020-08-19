@@ -1,0 +1,15 @@
+<!-- We put !allowNewServer because the disabled property of the button
+    is bound to the value of allowNewServer member variable. The button will be enabled
+    when !allowNewServer = true (after 2 seconds of creation) -->
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer">Add Server
+</button>
+
+
+<!-- Two ways to do the same thing using string interpolation and property binding -->
+<p [innerText]="allowNewServer"></p>
+<!-- <p>{{ allowNewServer }} </p> -->
+
+<app-server></app-server>
+<app-server></app-server>
