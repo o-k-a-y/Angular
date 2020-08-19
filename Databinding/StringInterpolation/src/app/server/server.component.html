@@ -1,0 +1,5 @@
+<!-- String interpolation example using class members -->
+<!-- String interpolation only has 1 condition: resolve to a string -->
+<!-- This means we could insert a function call inside {{ }} as long as the return is a string -->
+<!-- Numbers are easily converted to strings, so anything that has a toString() is fine as well -->
+<p>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
