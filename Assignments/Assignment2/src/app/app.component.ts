@@ -10,7 +10,7 @@ export class AppComponent {
 
   username: string = '';
 
-  resetUsername() {
+  onResetUsername() {
     this.username = '';
   }
 
