@@ -1,3 +1,10 @@
+<label>Server Name</label>
+<input 
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)"
+    >
+
 <!-- We put !allowNewServer because the disabled property of the button
     is bound to the value of allowNewServer member variable. The button will be enabled
     when !allowNewServer = true (after 2 seconds of creation) -->
