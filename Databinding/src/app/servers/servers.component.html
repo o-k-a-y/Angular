@@ -1,9 +1,23 @@
 <label>Server Name</label>
-<input 
+
+<!-- Event binding example sending the $event object to the Component function -->
+<!-- <input 
     type="text"
     class="form-control"
     (input)="onUpdateServerName($event)"
-    >
+> -->
+
+<!-- Two-way binding (property and event binding) example -->
+<!-- What this example does is trigger on the input event and update the 
+value of serverName in our Component automatically and also updates the values of the input element when serverName changes.
+So the default name of serverName will be the value of the input -->
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName"
+>
+
+<p>{{ serverName }}</p>
 
 <!-- We put !allowNewServer because the disabled property of the button
     is bound to the value of allowNewServer member variable. The button will be enabled
