@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Assignment2';
+
+  username: string = '';
+
+  resetUsername() {
+    this.username = '';
+  }
+
+  isUsernameEmpty() {
+    return this.username.length == 0;
+  }
 }

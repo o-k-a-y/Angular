@@ -22,7 +22,7 @@ export class ServersComponent implements OnInit {
   // Called when the button is clicked:
   //    (click)="onCreateServer()">Add Server
   onCreateServer() {
-    this.serverCreationStatus = "Server was created!";
+    this.serverCreationStatus = "Server was created! Name is " + this.serverName;
   }
 
   // Function used in the event binding example in servers.component.hmtl
