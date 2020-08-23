@@ -10,7 +10,7 @@ export class AppComponent {
 
   paragraphTextVisible: boolean;
 
-  buttonClickTimeStamps = [];
+  buttonClickTimeStamps: Array<Date> = [];
   timeStamps = 0;
 
   constructor() {
@@ -27,7 +27,7 @@ export class AppComponent {
   }
 
   addToClickList() {
-    this.buttonClickTimeStamps.push(Date.now());
+    this.buttonClickTimeStamps.push(new Date());
     this.timeStamps++;
     console.log(this.buttonClickTimeStamps);
   }
