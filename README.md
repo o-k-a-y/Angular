@@ -9,9 +9,10 @@ Example showing adding bootstrap.css to the styles in the configuration schema i
 Also shows a basic new Component.
 
 ## Databinding
-Example showing {{ stringInterpolation }}, [property]="binding" and (event)="binding()"
+Example showing {{ stringInterpolation }}, [property]="binding", (event)="binding()" and [(two-way)]="binding".
 
 If you want to output or print something, use **string interpolation**.
 If you want to change some property (html element, directive, component), typically you will use **property binding**.
 If you want an event to bind to a function, use event binding.
 
+If you want both, use **two-way binding**. It's just syntactic sugar for combining property binding and event binding.
