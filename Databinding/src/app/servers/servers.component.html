@@ -28,12 +28,20 @@ So the default name of serverName will be the value of the input -->
     (click)="onCreateServer()">Add Server
 </button>
 
-<p>{{ serverCreationStatus }} </p>
+<!-- <p>{{ serverCreationStatus }} </p> -->
+
+<!-- Example of Directives using Template Directives (ngIf is a built in directive) -->
+<p *ngIf="serverCreated; else noServer">Server was created. server name is {{ serverName }}</p>
+<!-- #noServer is a local reference that marks the spot in the DOM where the paragraph will be placed -->
+<ng-template #noServer>
+    <p>No Server was created!</p>
+</ng-template>
 
 <!-- Two ways to do the same thing using string interpolation and property binding -->
 <!-- Note that you can't put {{ }} inside quotes, it will break. -->
 <!-- <p [innerText]="allowNewServer"></p> -->
 <!-- <p>{{ allowNewServer }} </p> -->
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- Iterates through all elements of servers array -->
+<!-- We can't actually pass data this way (server name) so this is just creating random server components. -->
+<app-server *ngFor="let server of servers"></app-server>
