@@ -1,17 +1,22 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
+      <!-- Hamburger button -->
+      <!-- When clicked it will toggle if it's collapsed -->
       <button
         type="button"
         class="navbar-toggle"
-        (click)="collapsed = !collapsed"
+        (click)="collapsed = !collapsed" 
       >
-        <!-- The Hamburger button with 3 lines -->
+        <!-- Hamburger button will have 3 lines -->
         <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
       </button>
       <!-- navbar-brand is used for your company, product, or project name https://getbootstrap.com/docs/4.1/components/navbar/ -->
       <a routerLink="/" class="navbar-brand">Recipe Book</a>
     </div>
+    <!-- When the navbar collapses on smaller screens we set collapsed to true -->
+    <!-- This will instead show the hamburger button -->
+    <!-- [class.collapse]="collapsed" is the same as [ngClass]="{collapse: collapsed}" -->
     <div
       class="navbar-collapse"
       [class.collapse]="collapsed"

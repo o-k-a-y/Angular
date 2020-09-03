@@ -22,3 +22,6 @@ If you want both, use **two-way binding**. It's just syntactic sugar for combini
 **Structural directives**: Change DOM layout by adding/removing elements. Examples are \*ngIf, \*ngFor.
 **Attribute directives**: Change appearance or behavior of an element, component, or other directive. Examples are [ngStyle], [ngClass].
 
+
+## ShoppingListWithRecipes
+An actual small project using nested components to display a recipe list and shopping list with options to manage both.

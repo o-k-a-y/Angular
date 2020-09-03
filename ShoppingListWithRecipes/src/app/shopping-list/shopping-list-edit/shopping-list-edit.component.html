@@ -1,1 +1,31 @@
-<p>shopping-list-edit works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <!-- No action attribute because we are not sending a request to a server after form is submitted -->
+    <form>
+      <div class="row">
+        <!-- sm = small devices -->
+        <!-- On small devices it should span the full width -->
+        <div class="col-sm-5 form-group">
+          <!-- The for attribute in label matches the id in the input so
+                    when clicking the label it counts as clicking the input -->
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" />
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" min="1" class="form-control" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- bootstrap class btn-toolbar adds margins between the buttons -->
+          <div class="btn-toolbar">
+            <button class="btn btn-success" type="submit">Add</button>
+            <button class="btn btn-danger" type="button">Delete</button>
+            <button class="btn btn-primary" type="button">Clear</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
