@@ -25,3 +25,6 @@ If you want both, use **two-way binding**. It's just syntactic sugar for combini
 
 ## ShoppingListWithRecipes
 An actual small project using nested components to display a recipe list and shopping list with options to manage both.
+
+## cmp-databinding-start
+Databinding on custom Components.
