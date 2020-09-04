@@ -11,6 +11,8 @@ export class ServerElementComponent implements OnInit {
   //    in order to bind to it
   @Input('srvElement') element: {type: string, name: string, content: string};
 
+
+
   constructor() {
    }
 

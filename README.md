@@ -28,3 +28,6 @@ An actual small project using nested components to display a recipe list and sho
 
 ## cmp-databinding-start
 Databinding on custom Components.
+
+@Input() decorator for databinding on properties/variables.
+@Output() decorator for databinding on events.
