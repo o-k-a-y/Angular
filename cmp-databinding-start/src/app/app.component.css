@@ -2,6 +2,8 @@
   margin-top: 30px;
 }
 
-p {
+/* Needed to move to server-element because Angular enforces that css for a component only works for that component, regardless
+if the child components have this element  */
+/* p {
   color: blue;
-}
+} */
