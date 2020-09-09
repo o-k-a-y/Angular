@@ -5,6 +5,9 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   templateUrl: './server-element.component.html',
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.None // Makes the css applied to this component affect the global DOM (probably not what you want almost always)
+  // ViewEncapsulation.Native uses Shadow DOM 
+  // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM
+  // ViewEncapsulation.Emulated emulates Shadow DOM so works regardless of browser. This is the default behavior
 })
 export class ServerElementComponent implements OnInit {
   // @Input exposes the property (now it's publicly accessible from other components)
