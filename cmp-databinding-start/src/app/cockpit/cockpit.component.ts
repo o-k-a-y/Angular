@@ -24,6 +24,10 @@ export class CockpitComponent implements OnInit {
   // This event is fired when the add server button in cockpit is clicked
   // This event is captured in app.component.html once emitted
   onAddServer(serverNameInput: HTMLInputElement) {
+
+    // NEVER DO SOMETHING LIKE THIS
+    // this.serverContentInput.nativeElement.value = "SOMETHING";
+
     // Using ViewChild/element reference
     this.serverCreated.emit({
       serverName: serverNameInput.value,
