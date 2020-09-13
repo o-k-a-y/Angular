@@ -8,9 +8,26 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let serverElement of serverElements"
-      [srvElement]="serverElement">
 
+     
+
+      <div class="btn-toolbar">
+        <!-- Demonstrates ngOnChanges fires every change to data-bound property -->
+        <!-- https://angular.io/api/core/OnChanges -->
+        <button class="btn btn-primary" (click)="onChangeFirst()">
+          Change first Element
+        </button>
+  
+        <!-- Demonstrates destroying components so OnDestroy is called -->
+        <button class="btn btn-danger" (click)="onDestroyFirst()">
+          Destory first Component
+        </button>
+      </div>
+      
+
+      <app-server-element *ngFor="let serverElement of serverElements"
+      [srvElement]="serverElement"
+      [name]="serverElement.name">
       
       <!-- This section of the code is possible thanks to <ng-content> directive -->
       <p>

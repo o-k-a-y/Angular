@@ -1,5 +1,18 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-  
+import { 
+  Component, 
+  ViewEncapsulation, 
+  Input, 
+  OnInit, 
+  OnChanges, 
+  SimpleChanges, 
+  DoCheck, 
+  AfterContentInit, 
+  AfterContentChecked, 
+  AfterViewInit, 
+  AfterViewChecked, 
+  OnDestroy
+} from '@angular/core';
+
 @Component({
   selector: 'app-server-element',
   templateUrl: './server-element.component.html',
@@ -9,18 +22,72 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM
   // ViewEncapsulation.Emulated emulates Shadow DOM so works regardless of browser. This is the default behavior
 })
-export class ServerElementComponent implements OnInit {
+export class ServerElementComponent implements 
+  OnInit, 
+  OnChanges, 
+  DoCheck, 
+  AfterContentInit, 
+  AfterContentChecked, 
+  AfterViewInit, 
+  AfterViewChecked,
+  OnDestroy {
   // @Input exposes the property (now it's publicly accessible from other components)
   // In paranthesis we make an alias of what this variable must be referenced by in any component other than itself
   //    in order to bind to it
-  @Input('srvElement') element: {type: string, name: string, content: string};
+  @Input('srvElement') element: { type: string, name: string, content: string };
+  @Input() name: string;
 
 
+  // The follow lifecycle hooks are called in the order displayed (mostly, because ngDoCheck has 4 nested checks within in, and other little details)
+  // https://angular.io/guide/lifecycle-hooks
 
   constructor() {
-   }
-
-  ngOnInit(): void {
+    console.log("constructor called!");
   }
+
+
+  // Called before ngOnInit() and whenever one or more data-bound input properties change.
+  // Note that if your component has no inputs or you use it without providing any inputs, 
+  // the framework will not call ngOnChanges().
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("ngOnChanges called!");
+    console.log(changes);
+  }
+
+  // Called once, after the first ngOnChanges().
+  ngOnInit(): void {
+    console.log("ngOnInit called!");
+  }
+
+  // Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run.
+  ngDoCheck(): void {
+    console.log("ngDoCheck called!");
+  }
+
+  // Called once after the first ngDoCheck().
+  ngAfterContentInit(): void {
+    console.log("ngAfterContentInit called!");
+  }
+
+  // Called after ngAfterContentInit() and every subsequent ngDoCheck().
+  ngAfterContentChecked(): void {
+    console.log("ngAfterContentChecked called!");
+  }
+
+  // Called once after the first ngAfterContentChecked().
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit called!");
+  }
+
+  // Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked().
+  ngAfterViewChecked(): void {
+    console.log("ngAfterViewChecked called!");
+  }
+
+  // Called immediately before Angular destroys the directive or component.
+  ngOnDestroy(): void {
+    console.log("ngOnDestroy called!");
+  }
+  
 
 }

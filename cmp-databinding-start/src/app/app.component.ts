@@ -23,5 +23,15 @@ export class AppComponent {
       content: blueprintData.serverContent
     });
   }
+
+  // To demonstrate ngOnChanges because we change Input property in server-element component 
+  onChangeFirst() {
+    this.serverElements[0].name = "Changed!";
+  }
+
+  // To demonstrate ngOnDestroy
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
+  }
   
 }
