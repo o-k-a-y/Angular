@@ -7,9 +7,12 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class GameControlComponent implements OnInit {
   // Now that it has @Output() decorator, it can be caught outside the component
-  @Output() intervalFired: EventEmitter<number> = new EventEmitter<number>();
+  @Output() intervalFired = new EventEmitter<number>();
+
+  // Stores the intervalID from setInterval() to be used with clearInterval(intervalID)
   interval;
   
+  // The number we emit with the intervalFired event
   lastNumber = 0;
 
   constructor() { }
@@ -25,6 +28,7 @@ export class GameControlComponent implements OnInit {
     }, 1000);
   }
   
+  // Stops setInterval from calling the function every second
   onPauseGame() {
     clearInterval(this.interval);
   }
