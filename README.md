@@ -9,7 +9,7 @@ Example showing adding bootstrap.css to the styles in the configuration schema i
 Also shows a basic new Component.
 
 ## DatabindingAndDirectives
-###Databinding: {{ stringInterpolation }}, [property]="binding", (event)="binding()" and [(two-way)]="binding".
+### Databinding: {{ stringInterpolation }}, [property]="binding", (event)="binding()" and [(two-way)]="binding".
 
 If you want to output or print something, use **string interpolation**.
 If you want to change some property (html element, directive, component), typically you will use **property binding**.
@@ -17,7 +17,7 @@ If you want an event to bind to a function, use event binding.
 
 If you want both, use **two-way binding**. It's just syntactic sugar for combining property binding and event binding.
 
-###Directives: Components, Structural directives, Attribute directives
+### Directives: Components, Structural directives, Attribute directives
 **Components**: Directives with a template.
 **Structural directives**: Change DOM layout by adding/removing elements. Examples are \*ngIf, \*ngFor.
 **Attribute directives**: Change appearance or behavior of an element, component, or other directive. Examples are [ngStyle], [ngClass].
