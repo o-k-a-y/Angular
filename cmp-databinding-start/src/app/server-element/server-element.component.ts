@@ -12,7 +12,8 @@ import {
   AfterViewChecked, 
   OnDestroy,
   ViewChild,
-  ElementRef
+  ElementRef,
+  ContentChild
 } from '@angular/core';
 
 @Component({
@@ -40,7 +41,9 @@ export class ServerElementComponent implements
   @Input() name: string;
 
   @ViewChild('heading', {static: true}) header: ElementRef;
-
+  // Just like ViewChield, we can't access the ElementRef before we reach ngAfterContentInit;
+  // ContentChild can access elements passed via <ng-content>
+  @ContentChild('contentParagraph', {static: true}) paragraph: ElementRef;
 
   // The follow lifecycle hooks are called in the order displayed (mostly, because ngDoCheck has 4 nested checks within in, and other little details)
   // https://angular.io/guide/lifecycle-hooks
@@ -65,6 +68,8 @@ export class ServerElementComponent implements
     // We can't access the elements of the DOM because it hasn't been rendered yet. 
     // ngAfterViewInit() would be a better place to check/manipulate DOM elements
     console.log("Header value: " + this.header.nativeElement.textContent);
+    console.log("Paragraph value: " + this.paragraph.nativeElement.textContent);
+
   }
 
   // Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run.
@@ -86,6 +91,8 @@ export class ServerElementComponent implements
   ngAfterViewInit(): void {
     console.log("ngAfterViewInit called!");
     console.log("Header value: " + this.header.nativeElement.textContent);
+    console.log("Paragraph value: " + this.paragraph.nativeElement.textContent);
+
   }
 
   // Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked().

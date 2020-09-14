@@ -30,7 +30,7 @@
       [name]="serverElement.name">
       
       <!-- This section of the code is possible thanks to <ng-content> directive -->
-      <p>
+      <p #contentParagraph>
         <strong *ngIf="serverElement.type === 'server'" style="color: red">
           {{ serverElement.content }}
         </strong>
