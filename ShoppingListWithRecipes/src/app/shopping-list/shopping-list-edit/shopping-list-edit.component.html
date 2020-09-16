@@ -9,18 +9,27 @@
           <!-- The for attribute in label matches the id in the input so
                     when clicking the label it counts as clicking the input -->
           <label for="name">Name</label>
-          <input type="text" id="name" class="form-control" />
+          <input 
+            type="text" 
+            id="name" 
+            class="form-control" 
+            #nameInput/>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
-          <input type="number" id="amount" min="1" class="form-control" />
+          <input 
+            type="number" 
+            id="amount" 
+            min="1" 
+            class="form-control" 
+            #amountInput/>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
           <!-- bootstrap class btn-toolbar adds margins between the buttons -->
           <div class="btn-toolbar">
-            <button class="btn btn-success" type="submit">Add</button>
+            <button class="btn btn-success" type="submit" (click)="onAddIngredient()">Add</button>
             <button class="btn btn-danger" type="button">Delete</button>
             <button class="btn btn-primary" type="button">Clear</button>
           </div>
