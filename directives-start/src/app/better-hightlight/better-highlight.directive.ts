@@ -1,13 +1,23 @@
-import { Directive, OnInit, ElementRef, Renderer2, HostListener, HostBinding } from '@angular/core';
+import { 
+  Directive, 
+  OnInit, 
+  ElementRef, 
+  Renderer2, 
+  HostListener, 
+  HostBinding, 
+  Input 
+} from '@angular/core';
 
 @Directive({
   selector: '[appBetterHighlight]'
 })
 export class BetterHighlightDirective implements OnInit {
+  @Input() defaultColor: string = 'transparent';
+  @Input() highlightColor: string = 'blue';
 
   // On the element that this directive sits, bind the style property and subproperty background color to this variable
   @HostBinding('style.backgroundColor')
-  backgroundColor: string = 'transparent';
+  backgroundColor: string;
 
   @HostBinding('style.color')
   textColor: string = 'black';
@@ -15,9 +25,10 @@ export class BetterHighlightDirective implements OnInit {
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
-    // // Better to use renderer because if running angular outside the browser more errors can occur
     // this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'blue');
     // this.renderer.setStyle(this.elementRef.nativeElement, 'color', 'white');
+
+    this.backgroundColor = this.defaultColor;
   }
 
   // Change background color blue on mouse over
@@ -25,11 +36,10 @@ export class BetterHighlightDirective implements OnInit {
   // Text color set to white so it's actually readable
   @HostListener('mouseenter')
   mouseover(eventData: Event) {
-    // Better to use renderer because if running angular outside the browser more errors can occur
     // this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'blue');
     // this.renderer.setStyle(this.elementRef.nativeElement, 'color', 'white');
 
-    this.backgroundColor = 'blue';
+    this.backgroundColor = this.highlightColor;
     this.textColor = 'white';
   }
 
@@ -40,7 +50,7 @@ export class BetterHighlightDirective implements OnInit {
     // this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'transparent');
     // this.renderer.setStyle(this.elementRef.nativeElement, 'color', 'black');
 
-    this.backgroundColor = 'transparent';
+    this.backgroundColor = this.defaultColor;
     this.textColor = 'black';
   }
 
