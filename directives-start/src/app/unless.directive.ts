@@ -7,6 +7,7 @@ export class UnlessDirective {
   // Setter of property MUST match selector name for structural directives to be accessible!
   // Whenever the values passed (condition) change, this setter method is called
   @Input() set appUnless(condition: boolean) {
+    console.log("condition has changed: " + condition);
     if (!condition) {
       // Create view in view container
       this.viewContainerRef.createEmbeddedView(this.templateRef);

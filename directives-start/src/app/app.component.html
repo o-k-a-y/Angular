@@ -41,7 +41,7 @@
         </ng-template> -->
 
         <!-- Our custom structural directive to show even numbers if not onlyOdd is true -->
-        <div *appUnless="onlyOdd">
+        <div *appUnless="!onlyOdd">
           <li
             class="list-group-item"
             [ngClass]="{odd: number % 2 !== 0}"
