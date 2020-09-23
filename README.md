@@ -31,3 +31,6 @@ Databinding on custom Components.
 
 @Input() decorator for databinding on properties/variables.
 @Output() decorator for databinding on events.
+
+## directives-start
+Creating custom structural and attribute directives to attach on elements.

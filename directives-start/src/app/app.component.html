@@ -41,7 +41,7 @@
         </ng-template> -->
 
         <!-- Our custom structural directive to show even numbers if not onlyOdd is true -->
-        <div *appUnless="!onlyOdd">
+        <div *appUnless="onlyOdd">
           <li
             class="list-group-item"
             [ngClass]="{odd: number % 2 !== 0}"
@@ -60,7 +60,7 @@
         <p>Only odd</p>
       </ng-template>
 
-      <!-- We can switch on values to conditonally display templates -->
+      <!-- We can switch on values to conditonally display -->
       <div [ngSwitch]="value">
         <p *ngSwitchCase="5">Value is 5</p>
         <p *ngSwitchCase="10">Value is 10</p>
