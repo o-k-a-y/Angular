@@ -13,10 +13,11 @@ export class DropdownDirective {
     // When document is clicked off a dropdown, close the dropdown
     // Listen to click event on the element this directive is attached to
     @HostListener('document:click', ['event']) toggleOpen() {
-        console.log(event.target);
+        // console.log(event.target);
         console.log(this.elRef.nativeElement);
-        let test = this.elRef.nativeElement.toString().split("target")
-        console.log(test);
+        console.log("1");
+        // let test = this.elRef.nativeElement.toString().split("target")
+        // console.log(test);
         this.isOpen = this.elRef.nativeElement.contains(event.target) ? !this.isOpen : false;
     }
 
