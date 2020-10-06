@@ -8,10 +8,12 @@ import { LoggingService } from '../logging.service';
   styleUrls: ['./new-account.component.css'],
   // providers: [LoggingService]
 })
-export class NewAccountComponent {
+export class NewAccountComponent implements OnInit {
 
   constructor(private loggingService: LoggingService,
-              private accountsService: AccountsService) {}
+              private accountsService: AccountsService) {
+    
+  }
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);  
@@ -19,5 +21,11 @@ export class NewAccountComponent {
     // this.loggingService.logStatusChanged(accountStatus);
     
     // console.log('A server status changed, new status: ' + accountStatus);
+  }
+
+  ngOnInit() {
+    this.accountsService.statusUpdated.subscribe(
+      (status: string) => alert('New Status: ' + status)
+    );
   }
 }

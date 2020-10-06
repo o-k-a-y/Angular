@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
-import { stat } from "fs";
-
+import { EventEmitter } from '@angular/core';
 import { LoggingService } from './logging.service';
 
 @Injectable()
@@ -20,10 +19,14 @@ export class AccountsService {
         }
     ];
 
-    constructor(private loggingService: LoggingService) {}
+    // Can be used for cross-component communication
+    // Obervables are probably the better option though
+    statusUpdated = new EventEmitter<string>();
+
+    constructor(private loggingService: LoggingService) { }
 
     addAccount(name: string, status: string) {
-        this.accounts.push({name: name, status: status});
+        this.accounts.push({ name: name, status: status });
         this.loggingService.logStatusChanged(status);
     }
 
