@@ -18,4 +18,16 @@ export class ShoppingListService {
 
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
+
+    addIngredients(ingredients: Ingredient[]) {
+        // for (const ingredient of ingredients) {
+        //     this.ingredients.push(ingredient);
+        // }
+
+        // Spread the array of ingredients into a list of single ingredients
+        // If we push the entire array it would be added as one big element
+        this.ingredients.push(...ingredients);
+
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
 }
