@@ -10,7 +10,7 @@ export class DropdownDirective {
     @HostBinding('class.open')
     isOpen = false;
 
-    // When document is clicked off a dropdown, close the dropdown
+    // When document is clicked off a dropdown, close the dropdown, otherwise open the dropdown
     // Listen to click event on the element this directive is attached to
     @HostListener('document:click', ['event']) toggleOpen() {
         // console.log(event.target);
