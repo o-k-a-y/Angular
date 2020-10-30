@@ -16,6 +16,7 @@ import { ServersService } from './servers/servers.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent }, // <hostname>
   { path: 'users', component: UsersComponent }, // <hostname>/users
+  { path: 'users/:id/:name', component: UsersComponent }, // <hostname>/users/<id> this is a dynamic path
   { path: 'servers', component: ServersComponent }, // <hostname>/servers
 ]
 
