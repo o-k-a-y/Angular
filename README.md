@@ -37,3 +37,7 @@ Databinding on custom Components.
 
 ## directives-start
 Creating custom structural and attribute directives to attach on elements.
+
+## routing-start
+Create absolute and local routes.
+Apply styling to elements based on the current route.
