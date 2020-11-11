@@ -29,8 +29,7 @@ export class UserComponent implements OnInit, OnDestroy {
     );
   }
 
-  // We don't need to do this for route observables because Angular cleans this up
-  // for us.
+  // We don't need to do this for route observables because Angular cleans this up for us.
   // For our own oberservables we should clean up like this
   ngOnDestroy() {
     this.paramsSubscriptions.unsubscribe();

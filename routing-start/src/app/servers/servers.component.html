@@ -1,7 +1,12 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
+      <!-- When link is clicked, will redirect to the route with the query parameters -->
+      <!-- Additionally a fragment is added to the route (#fragment) -->
       <a
+        [routerLink]="['/servers', 5, 'edit']"
+        [queryParams]="{allowEdit: '1'}"
+        fragment="loading"
         href="#"
         class="list-group-item"
         *ngFor="let server of servers">
