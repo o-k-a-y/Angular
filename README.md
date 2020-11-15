@@ -5,7 +5,7 @@ Angular Projects from https://www.udemy.com/course/the-complete-guide-to-angular
 Directory containing assignments from the course to demonstrate understanding of different concepts.
 
 ## FirstApp
-Literally the most basic Angular application.
+Literally the most basic Angular application with just the app component.
 
 ## BootstrapAndComponentExample
 Example showing adding bootstrap.css to the styles in the configuration schema in angular.json.
